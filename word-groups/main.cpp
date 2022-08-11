@@ -9,11 +9,11 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <set>
 
 using namespace std;
 
-
-int main(int argc, const char * argv[]) {
+vector<string> parse_words() {
     ifstream inFile;
     vector<string> words;
     
@@ -24,19 +24,25 @@ int main(int argc, const char * argv[]) {
         exit(1);   // call system to stop
     }
     
-    string tp;
-    while (getline(inFile, tp)){ //read data from file object and put it into string.
-        if (tp.length() == 6) {
-            tp.pop_back();
-            words.push_back(tp);
+    string word;
+    while (getline(inFile, word)){ //read data from file object and put it into string.
+        word.pop_back();
+        if (word.length() == 5) {
+            set <char> word_set(begin(word), end(word));
+            if (word_set.size() == 5){
+                words.push_back(word);
+            }
         }
-    }
-    
-    for (string i: words) {
-        cout << i << '\n';
     }
         
     inFile.close();
+    return words;
+}
+
+
+int main(int argc, const char * argv[]) {
+    vector<string> words;
+    words = parse_words();
     return 0;
     
 }
