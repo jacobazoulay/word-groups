@@ -11,8 +11,10 @@
 #include <string>
 #include <set>
 #include <cmath>
+#include <filesystem>
 
 using namespace std;
+
 
 vector<string> parse_words() {
     ifstream inFile;
@@ -56,11 +58,10 @@ bool distinct(string word, string test_word) {
 }
 
 
-int main(int argc, const char * argv[]) {
+int create_neighbors() {
     vector<string> words;
     
     words = parse_words();
-    words = vector<string>(words.begin(), words.end() - 9000);
     
     vector<vector<string> > neighbors(words.size());
     
@@ -90,5 +91,31 @@ int main(int argc, const char * argv[]) {
     csv_neighbors.close();
     
     return 0;
+}
+
+
+int solve(ifstream &csv_file) {
+    return 0;
+}
+
+
+int main(int argc, char * argv[]) {
     
+    if (argc == 1){
+        ifstream neighbor_file;
+        string neighbor_path;
+        neighbor_path = filesystem::current_path() / "words_neightbors.csv";
+        neighbor_file.open(neighbor_path);
+        
+        if (neighbor_file) {
+            solve(neighbor_file);
+        } else {
+            create_neighbors();
+        }
+        
+    } else if (argc == 2 && strcmp(argv[2], "-n") == 0) {
+        create_neighbors();
+    }
+    
+    return 0;
 }
