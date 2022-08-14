@@ -34,5 +34,7 @@
 # Xcode
 *.xcodeproj
 
-DerivedData\
+DerivedData/
 *.DS_Store
+
+word-groups.xcodeproj/
