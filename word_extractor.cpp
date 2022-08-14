@@ -63,7 +63,7 @@ int create_neighbors() {
     
     words = parse_words();
     
-    vector<vector<string> > neighbors(words.size());
+    vector< vector<string> > neighbors(words.size());
     
     cout << "----Creating Neighbors----\n";
     float percent;
