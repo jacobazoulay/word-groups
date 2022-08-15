@@ -5,6 +5,7 @@
 //  Created by Jacob Azoulay on 8/13/22.
 //
 
+#include "../include/word_extractor.hpp"
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -12,7 +13,7 @@
 #include <set>
 #include <cmath>
 #include <filesystem>
-#include "word_extractor.hpp"
+
 using namespace std;
 
 

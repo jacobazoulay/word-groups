@@ -5,18 +5,17 @@
 //  Created by Jacob Azoulay on 8/12/22.
 //
 
+#include "../include/solver.hpp"
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include<sstream>
 #include <cstdlib>
-#include "solver.hpp"
-using namespace std;
 
 
 vector<vector<string> > word_loader(ifstream &csv_file) {
     cout << "----Loading Words from .csv----\n";
-    string row=NULL;
+    string row;
     int row_n = 0;
     int row_count = 0;
     string word;

@@ -5,6 +5,8 @@
 //  Created by Jacob Azoulay on 8/9/22.
 //
 
+#include "../include/word_extractor.hpp"
+#include "../include/solver.hpp"
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -12,18 +14,18 @@
 #include <set>
 #include <cmath>
 #include <filesystem>
-#include "word_extractor.hpp"
-#include "solver.hpp"
+
 using namespace std;
+
 
 
 int main(int argc, char* argv[]) {
     if (argc == 1){
         ifstream neighbor_file;
         string neighbor_path;
-        neighbor_path = filesystem::current_path() / "word_neighbors.csv";
+        neighbor_path = filesystem::current_path() / ".." / "assets" / "word_neighbors.csv";
         neighbor_file.open(neighbor_path);
-        
+        cout << neighbor_path;
         if (neighbor_file) {
             solve(neighbor_file);
         } else {
@@ -38,3 +40,8 @@ int main(int argc, char* argv[]) {
     
     return 0;
 }
+
+// int main() {
+//     cout << "Hi";
+//     return 0;
+// }

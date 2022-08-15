@@ -38,3 +38,7 @@ DerivedData/
 *.DS_Store
 
 word-groups.xcodeproj/
+
+.vscode/
+src/main.dSYM/
+src/main
