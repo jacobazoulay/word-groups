@@ -18,14 +18,12 @@
 using namespace std;
 
 
-
 int main(int argc, char* argv[]) {
     if (argc == 1){
         ifstream neighbor_file;
-        string neighbor_path;
-        neighbor_path = filesystem::current_path() / ".." / "assets" / "word_neighbors.csv";
+        string neighbor_path = filesystem::current_path() / ".." / "assets" / "word_neighbors.csv";
         neighbor_file.open(neighbor_path);
-        cout << neighbor_path;
+
         if (neighbor_file) {
             solve(neighbor_file);
         } else {

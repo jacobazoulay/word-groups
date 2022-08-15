@@ -18,12 +18,14 @@ using namespace std;
 
 
 vector<string> parse_words() {
+    string inFile_path = filesystem::current_path() / ".." / "assets" / "words_alpha.txt";
     ifstream inFile;
     vector<string> words;
     
     cout << "----Getting Words----\n";
     
-    inFile.open("/Users/jacobazoulay/Repos/word-groups/words_alpha.txt");
+    inFile.open(inFile_path);
+    
     
     if (!inFile) {
         cerr << "Unable to open file datafile.txt";
